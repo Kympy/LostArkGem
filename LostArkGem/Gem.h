@@ -17,9 +17,11 @@ private:
 	Skill _03;
 	int maxCraft;
 	int percent;
+	int lastPercent;
 public:
 	Gem() {
 		percent = 75;
+		lastPercent = 0;
 		int tempRand_1 = randSkill(mersenne);
 		_01.Init((SkillType)tempRand_1);
 		int tempRand_2 = randSkill(mersenne);
@@ -96,6 +98,7 @@ public:
 		}
 	}
 	void SetPercent(int value) {
+		lastPercent = percent;
 		percent += value;
 		if (percent < 25) {
 			percent = 25;
@@ -123,5 +126,8 @@ public:
 	}
 	int GetPercent() {
 		return percent;
+	}
+	int GetLast() {
+		return lastPercent;
 	}
 };

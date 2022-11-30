@@ -5,6 +5,8 @@
 using namespace std;
 
 uniform_int_distribution<int> randPercent(0, 100);
+// Debug
+int currentPercent;
 
 int main() {
 	system("tiTle 로스트아크 세공 프로그램");
@@ -37,7 +39,8 @@ void Craft::TryCraft(int index) {
 	if (currentGem->GetSkill(index).index == currentGem->GetMax()) {
 		return;
 	}
-	if (randPercent(mersenne) <= currentGem->GetPercent()) {
+	currentPercent = randPercent(mersenne);
+	if (currentPercent <= currentGem->GetPercent()) {
 		currentGem->CraftResult(index, true);
 	}
 	else {
@@ -98,7 +101,7 @@ void Craft::Print() {
 		cout << "\t--------------------------------" << endl;
 		cout << endl << endl;
 		TextColor(Color::YELLOW);
-		cout << "\t\t\t●" << endl;
+		cout << "\t\t\t●" << "\tMy : " << currentPercent << " Cpu : " << currentGem->GetLast() << endl;
 		TextColor(Color::WHITE);
 		cout << endl;
 		cout << "\t증가 각인\t\t+" << currentGem->GetPercent() << "%" << endl;
