@@ -6,12 +6,16 @@ using namespace std;
 class Craft {
 private:
 	Gem* currentGem;
+	string path = "GemData_";
 	void SetColor(int index);
 public:
 	Craft();
 	~Craft();
 	void TryCraft(int index);
-	void NewGem();
-	void Print();
+	void NewGem(bool isTen);
+	void Print(bool getInput);
 	void Input();
+	void AutoCraft();
+	void Auto1000(int count);
+	void SaveData();
 };

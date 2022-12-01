@@ -1,6 +1,5 @@
 #pragma once
-enum Color
-{
+enum Color {
 	BLACK,
 	BLUE,
 	GREEN,
@@ -19,7 +18,6 @@ enum Color
 	WHITE
 };
 
-void TextColor(int foreground)
-{
+void TextColor(int foreground) {
 	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), foreground);
 }

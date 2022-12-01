@@ -19,7 +19,7 @@ private:
 	int percent;
 	int lastPercent;
 public:
-	Gem() {
+	Gem(bool isTen) {
 		percent = 75;
 		lastPercent = 0;
 		int tempRand_1 = randSkill(mersenne);
@@ -31,6 +31,11 @@ public:
 		_02.Init((SkillType)tempRand_2);
 		_03.Init((M_SkillType)randRank(mersenne));
 
+		if (isTen == true) {
+			name = "고고한 비상의 돌";
+			maxCraft = 10;
+			return;
+		}
 		switch (randRank(mersenne)) {
 		case 0: {
 			name = "희귀한 비상의 돌";
