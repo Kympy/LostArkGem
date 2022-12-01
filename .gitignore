@@ -1,2 +1,5 @@
 
 .vs/LostArkGem/v17/Browse.VC.opendb
+LostArkGem/x64/Release/vc143.pdb
+*.tlog
+*.log
